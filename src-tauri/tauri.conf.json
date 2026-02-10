@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "sea-lantern",
+  "productName": "Sea Lantern",
   "version": "0.1.0",
-  "identifier": "com.fps_z.sea-lantern",
+  "identifier": "com.fpsz.sea-lantern",
   "build": {
     "beforeDevCommand": "npm run dev",
     "devUrl": "http://localhost:1420",
@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "sea-lantern",
+        "title": "Sea Lantern",
         "width": 1280,
         "height": 800,
 		"minWidth": 960,
@@ -34,6 +34,17 @@
       "icons/128x128@2x.png",
       "icons/icon.icns",
       "icons/icon.ico"
-    ]
+    ],
+    "windows": {
+      "wix": {
+        "language": "zh-CN"
+      },
+      "nsis": {
+        "languages": ["SimpChinese"]
+      }
+    },
+    "publisher": "FPS_Z",
+    "shortDescription": "Minecraft 服务器管理器",
+    "longDescription": "Sea Lantern 是一个现代化的 Minecraft 服务器管理工具，支持服务器创建、控制台管理、玩家管理等功能。"
   }
 }
