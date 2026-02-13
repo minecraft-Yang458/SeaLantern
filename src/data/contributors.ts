@@ -38,7 +38,7 @@ export const contributors: Contributor[] = [
     //url: "https://gitee.com/fps_z",
   },  
   {
-    name: "凋空零",
+    name: "凋空凌",
     role: "修复文档bug",
     avatar: "https://mc-heads.net/avatar/Alex/64",
     //url: "https://gitee.com/fps_z",
