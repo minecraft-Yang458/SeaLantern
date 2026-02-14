@@ -1,11 +1,11 @@
 {
-  "version": "0.4.0",
-  "notes": "更新内容：\n- 新功能：暗色模式支持\n- 新功能：Windows亚克力毛玻璃效果\n- 新功能：字体选择功能\n- 优化：Java搜索逻辑（Windows注册表支持）\n- 修复：Linux Wayland桌面环境白屏问题\n- 优化：美化下拉框组件\n- 优化：系统资源显示实际内容",
+  "version": "0.4.1",
+  "notes": "更新内容：\n- 优化：Rust 编译配置，减少二进制文件大小\n- 优化：精简依赖，降低内存占用\n- 优化：前端代码分割，提升加载速度",
   "pub_date": "2026-02-14T12:00:00Z",
   "platforms": {
     "windows-x86_64": {
       "signature": "dW50cnVzdGVk",
-      "url": "https://gitee.com/fps_z/SeaLantern/releases/download/v0.4.0/Sea%20Lantern_0.4.0_x64-setup.exe"
+      "url": "https://gitee.com/fps_z/SeaLantern/releases/download/v0.4.1/Sea%20Lantern_0.4.1_x64-setup.exe"
     }
   }
 }
