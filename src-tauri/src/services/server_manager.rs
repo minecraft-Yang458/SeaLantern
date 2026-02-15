@@ -347,9 +347,11 @@ impl ServerManager {
 
         // 启动日志读取线程
         let logs_ref = &self.logs as *const Mutex<HashMap<String, Vec<String>>>;
+        let procs_ref = &self.processes as *const Mutex<HashMap<String, Child>>;
         let max_lines = settings.max_log_lines as usize;
         let lid = id.to_string();
         let ptr = logs_ref as usize;
+        let p_ptr = procs_ref as usize;
         let ml = max_lines;
         let log_path = log_file.clone();
 
@@ -359,6 +361,19 @@ impl ServerManager {
             let mut last_size = 0u64;
 
             loop {
+                // Check if process still exists in manager
+                let should_exit = unsafe {
+                    let m = &*(p_ptr as *const Mutex<HashMap<String, Child>>);
+                    if let Ok(procs) = m.lock() {
+                        !procs.contains_key(&lid)
+                    } else {
+                        false
+                    }
+                };
+                if should_exit {
+                    break;
+                }
+
                 std::thread::sleep(std::time::Duration::from_millis(500));
 
                 if let Ok(mut file) = std::fs::File::open(&log_path) {
